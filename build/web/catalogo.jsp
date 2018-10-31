@@ -6,6 +6,7 @@
 <%@page import="java.util.Arrays"%>
 <%@page import="Controlador.PublicacionJpaController"%>
 <%@page import="Controlador.CasaJpaController"%>
+<%@page import="Controlador.UsuarioJpaController"%>
 <%@page import="javax.persistence.EntityManager"%>
 <%@page import="javax.persistence.Persistence"%>
 <%@page import="javax.persistence.EntityManagerFactory"%>
@@ -63,15 +64,24 @@
                         
                         PublicacionJpaController pub = new PublicacionJpaController(emf);
                         CasaJpaController casa = new CasaJpaController(emf);
+                        UsuarioJpaController user = new UsuarioJpaController(emf);
                         int id, usuario, idc;
                         
-                        String desc, estado, calle, colonia, caimg, dir, numext;
+                        String desc, estado, calle, colonia, caimg, dir,
+                                numext, usern, activo;
                         Date fecha;
                         
                         BigDecimal costo;
                         
                         for (int i = 0; i < pub.findPublicacionEntities().size(); i++) {
+                            activo = Arrays.toString(pub.findPublicacionEntities().get(i).getEstatus().split(",")) ;
+                            activo = activo.replace("[", "");
+                            activo = activo.replace("]", "");
+                            System.out.println(activo);
                             
+                        if (activo.equals("no")){
+                            continue;
+                        }
                             
                         id = pub.findPublicacionEntities().get(i).getId();
                         usuario = pub.findPublicacionEntities().get(i).getIdUsuario();
@@ -80,11 +90,12 @@
                         desc = Arrays.toString(pub.findPublicacionEntities().get(i).getDescripcion().split(","));
                         estado = Arrays.toString(pub.findPublicacionEntities().get(i).getEstatus().split(","));
                         idc = pub.findPublicacionEntities().get(i).getIdCasa();
-                        System.out.println(idc);
+                        
                         calle = Arrays.toString(casa.findCasa(idc).getCalle().split(","));
                         colonia = Arrays.toString(casa.findCasa(idc).getColonia().split(","));
                         numext = Arrays.toString(casa.findCasa(idc).getNumExt().split(","));
                         costo = casa.findCasa(idc).getCosto();
+                        usern = Arrays.toString(user.findUsuario(usuario).getNombre().split(","));
                        desc = desc.replace("[", "");
                        desc = desc.replace("]", "");
                        estado = estado.replace("[", "");
@@ -95,17 +106,19 @@
                        numext = numext.replace("]", "");
                        colonia = colonia.replace("[", "");
                        colonia = colonia.replace("]", "");
+                       usern = usern.replace("[", "");
+                       usern = usern.replace("]", "");
                        dir = calle + " #" + numext + " Col. " + colonia;
                        caimg = idc + ".jpg";
-                       
+                       System.out.println(caimg);
                         %>
                                             <td class="text-center">
                                                 <a href="#" onclick="">
                                                     <img src="img/<%
                                 out.println(caimg);
                                 %>"
-                                                         width="100" 
-                                                         height="auto">
+                                                         width="auto" 
+                                                         height="100">
                                                     <h4>
                                                         <%
                                 out.println(dir);
@@ -113,7 +126,7 @@
                                                 </a>
                                                 <h5>
                                                 <%
-                                                    out.println(usuario);
+                                                    out.println(usern);
                                                 %>
                                                 </h5>
                                                 <h6>Desde <h4><strong>$

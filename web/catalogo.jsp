@@ -11,6 +11,7 @@
 <%@page import="javax.persistence.Persistence"%>
 <%@page import="javax.persistence.EntityManagerFactory"%>
 <%@page import="java.util.Date"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.math.BigDecimal"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -57,7 +58,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+
                                         <tr>
                                             <%
                         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyInmueblesPU");
@@ -68,7 +69,7 @@
                         int id, usuario, idc;
                         
                         String desc, estado, calle, colonia, caimg, dir,
-                                numext, usern, activo;
+                                numext, usern, activo, total;
                         Date fecha;
                         
                         BigDecimal costo;
@@ -82,7 +83,7 @@
                         if (activo.equals("no")){
                             continue;
                         }
-                            
+                        
                         id = pub.findPublicacionEntities().get(i).getId();
                         usuario = pub.findPublicacionEntities().get(i).getIdUsuario();
                         desc = Arrays.toString(pub.findPublicacionEntities().get(i).getDescripcion().split(","));
@@ -111,36 +112,39 @@
                        dir = calle + " #" + numext + " Col. " + colonia;
                        caimg = idc + ".jpg";
                        System.out.println(caimg);
-                        %>
+                       
+                        
+                        total = String.format("%,.2f\n", costo);
+                                            %>
                                             <td class="text-center">
                                                 <a href="#" onclick="">
                                                     <img src="img/<%
                                 out.println(caimg);
-                                %>"
+                                                         %>"
                                                          width="auto" 
                                                          height="100">
                                                     <h4>
                                                         <%
                                 out.println(dir);
-                                                    %></h4>
+                                                        %></h4>
                                                 </a>
                                                 <h5>
-                                                <%
-                                                    out.println(usern);
-                                                %>
+                                                    <%
+                                                        out.println(usern);
+                                                    %>
                                                 </h5>
                                                 <h6>Desde <h4><strong>$
-                                                        <%
-                                                            out.println(costo);
-                                                        %>
+                                                            <%
+                                                                out.println(total);
+                                                            %>
                                                         </strong></h4></h6>
                                                 <button class="btn btn-success btn-flat">Comprar</button>
                                             </td>
-                                            
+
                                             <%
                                                 }
                                             %>
-                                            
+
                                         </tr>
                                     </tbody>
                                 </table>

@@ -74,7 +74,7 @@ public class Usuario implements Serializable {
     @Column(name = "telefono_fijo")
     private String telefonoFijo;
     @Column(name = "telefono_celular")
-    private String telefonoCelular;
+    private Integer telefonoCelular;
     @Lob
     @Column(name = "foto")
     private String foto;
@@ -190,11 +190,11 @@ public class Usuario implements Serializable {
         this.telefonoFijo = telefonoFijo;
     }
 
-    public String getTelefonoCelular() {
+    public Integer getTelefonoCelular() {
         return telefonoCelular;
     }
 
-    public void setTelefonoCelular(String telefonoCelular) {
+    public void setTelefonoCelular(Integer telefonoCelular) {
         this.telefonoCelular = telefonoCelular;
     }
 

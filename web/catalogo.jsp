@@ -44,7 +44,7 @@
                     <div class="card mb-3">
                         <div class="card-header">
                             <i class="fas fa-table"></i>
-                            Libros Registrados en el Sistema
+                            Casas Registradas en el Sistema
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -96,6 +96,7 @@
                         colonia = Arrays.toString(casa.findCasa(idc).getColonia().split(","));
                         numext = Arrays.toString(casa.findCasa(idc).getNumExt().split(","));
                         costo = casa.findCasa(idc).getCosto();
+                        System.out.println(costo);
                         usern = Arrays.toString(user.findUsuario(usuario).getNombre().split(","));
                        desc = desc.replace("[", "");
                        desc = desc.replace("]", "");
@@ -128,17 +129,28 @@
                                 out.println(dir);
                                                         %></h4>
                                                 </a>
-                                                <h5>
-                                                    <%
-                                                        out.println(usern);
-                                                    %>
-                                                </h5>
-                                                <h6>Desde <h4><strong>$
-                                                            <%
-                                                                out.println(total);
-                                                            %>
-                                                        </strong></h4></h6>
-                                                <button class="btn btn-success btn-flat">Comprar</button>
+                                                <form action="verCasa.jsp">
+                                                    <h5>
+
+                                                        <%
+                                                            out.println(usern);
+                                                        %>
+                                                        <input type="hidden" name ="id" value ="<%
+                                                            out.print(id);
+                                                        %>"/>
+                                                        <input type ="hidden" name ="vendedor"
+                                                               value ="<%
+                                                                   out.print(usern);
+                                                               %>"/>
+
+                                                    </h5>
+                                                    Desde <h4><strong>$
+                                                                <%
+                                                                    out.print(total);
+                                                                %>
+                                                            </strong></h4>
+                                                    <button class="btn btn-success btn-flat">Comprar</button>
+                                                </form>
                                             </td>
 
                                             <%

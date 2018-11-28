@@ -23,7 +23,7 @@
 <html lang="es">
     <!-- HEAD -->
     <head>
-        <title>Proyecto Individual | Libro Nuevo</title>
+        <title>Proyecto Individual | Modificar mi casa</title>
         <%@include file="invitado/partials/head.jsp" %>
     </head>
 
@@ -282,46 +282,49 @@
                                             <button type ="submit" class="btn btn-success btn-block" >Modificar</button>
                                             <%
                                             
-                                                                                        String tipo;
-                                                                                        String nc, ncalle, ncolonia,
-                                                                                                next, nnint, nhab, nmed,
-                                                                                                nnombre, napp, napm, ntel;
-                                                                                        BigDecimal ncosto;
-                                                                                        try{
-                                                                                        tipo = request.getParameter("tipo");
-                                                                                        nc = request.getParameter("costo");
-                                                                                        ncosto = new BigDecimal(nc);
-                                                                                        ncalle = request.getParameter("calle");
-                                                                                        ncolonia = request.getParameter("colonia");
-                                                                                        next = request.getParameter("num_ext");
-                                                                                        nnint = request.getParameter("num_int");
-                                                                                        nhab = request.getParameter("habitaciones");
-                                                                                        nmed = request.getParameter("medidas");
-                                                                                        nnombre = request.getParameter("nombre");
-                                                                                        napp = request.getParameter("apellido_paterno");
-                                                                                        napm = request.getParameter("apellido_materno");
-                                                                                        ntel = request.getParameter("telefono");
-                                                                                        System.out.println(tipo);
-                                                                                        } catch (Exception e){
-                                                                                            System.out.println(e.getMessage());
-                                                                                        }
-                                                                                        P = em.find(Publicacion.class, id);
-                                                                                        P.setEstatus(tipo);
-                                            
-                                                                                        C = em.find(Casa.class, cas);
-                                                                                        C.setCosto(ncosto);
-                                                                                        C.setCalle(ncalle);
-                                                                                        C.setColonia(ncolonia);
-                                                                                        C.setNumExt(next);
-                                                                                        C.setNumInt(nnint);
-                                                                                        C.setHabitaciones(nhab);
-                                                                                        C.setMedidas(nmed);
+                                                String tipo;
+                                                String nc, ncalle, ncolonia,
+                                                    next, nnint, nhab, nmed,
+                                                    nnombre, napp, napm, ntel;
+                                                BigDecimal ncosto;
+                                                try{
+                                                    tipo = request.getParameter("tipo");
+                                                    nc = request.getParameter("costo"); //bd es decimal
+                                                    ncosto = new BigDecimal(nc);
+                                                    ncalle = request.getParameter("calle");
+                                                    ncolonia = request.getParameter("colonia");
+                                                    next = request.getParameter("num_ext");
+                                                    nnint = request.getParameter("num_int");
+                                                    nhab = request.getParameter("habitaciones");    //bd es entero
+                                                    nmed = request.getParameter("medidas");
+                                                    nnombre = request.getParameter("nombre");
+                                                    napp = request.getParameter("apellido_paterno");
+                                                    napm = request.getParameter("apellido_materno");
+                                                    ntel = request.getParameter("telefono");    //BD es entero
+                                                    /*Los valores que comenté son los que me marcan error, 
+                                                    espero que tú puedas hacer lo de mandar un String a la bd
+                                                    como le hicimos en el tuyo.*/
                                                                                         
-                                                                                        S = em.find(Usuario.class, us);
-                                                                                        S.setNombre(nnombre);
-                                                                                        S.setApellidoPaterno(napp);
-                                                                                        S.setApellidoMaterno(napm);
-                                                                                        S.setTelefonoCelular(ntel);
+                                                } catch (Exception e){
+                                                    System.out.println(e.getMessage());
+                                                }
+                                                P = em.find(Publicacion.class, id);
+                                                P.setEstatus(tipo);
+                                            
+                                                C = em.find(Casa.class, cas);
+                                                C.setCosto(ncosto);
+                                                C.setCalle(ncalle);
+                                                C.setColonia(ncolonia);
+                                                C.setNumExt(next);
+                                                C.setNumInt(nnint);
+                                                C.setHabitaciones(nhab);
+                                                C.setMedidas(nmed);
+                                                                                        
+                                                S = em.find(Usuario.class, us);
+                                                S.setNombre(nnombre);
+                                                S.setApellidoPaterno(napp);
+                                                S.setApellidoMaterno(napm);
+                                                S.setTelefonoCelular(ntel);
                                             
                                             %>
                                         </div>

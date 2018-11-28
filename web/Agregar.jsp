@@ -44,7 +44,9 @@
                 
                 <center>
         <a href="Agentes_a.jsp">Ver Agentes</a><br/>
-        <a href="catalogo.jsp">Catálogo</a><br/>
+        <a href="catalogo_a.jsp">Catálogo</a><br/>
+        <a href="Reportes.jsp">Reportes</a><br/>
+        <a href ="login.jsp">Cerrar sesión</a><br/>
         
     </center>
             </form>

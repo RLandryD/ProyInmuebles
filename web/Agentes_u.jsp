@@ -61,7 +61,6 @@
                             <th class="text-center">Telefono</th>
                             <th class="text-center"> Email </th>
                             
-                            <th class="text-center">Acciones</th>
                             
                         </tr>
                     </thead>
@@ -79,13 +78,6 @@
                             <td class="text-center"><%= rs.getString("Email")%></td>
                             
                             
-                            <td class="text-center">
-                                
-                                <!-- <input type="hidden" value="<//%= rs.getInt("Id_Usuario")%>" id="Editar"/>
-                                <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="Editar_agente.jsp?id=<%= rs.getInt("Id_Agente")%>" class="btn btn-primary">Editar</a>
-                                <a href="Borrar_agente.jsp?id=<%= rs.getInt("Id_Agente")%>" class="btn btn-danger">Borrar</a>
-                            </td>
                         </tr>
                         <%}%>
                 </table>
@@ -160,9 +152,8 @@
                 }
             %>
         <center>
-            <a href="Agregar.jsp">Agregar Agentes</a><br/>
-        <a href="catalogo_a.jsp">Catálogo</a><br/>
-        <a href="Reportes.jsp">Reportes</a><br/>
+            
+        <a href="catalogo.jsp">Catálogo</a><br/>
         <a href ="login.jsp">Cerrar sesión</a><br/>
         
     </center>

@@ -165,8 +165,9 @@
                 </div>
                 <!-- /.content-wrapper -->
                 <center>
-            <a href="Agregar.jsp">Agregar Agentes</a><br/>
-            <a href ="Agentes_a.jsp">Ver agentes</a><br/>
+            
+            <a href ="Agentes_u.jsp">Ver agentes</a><br/>
+            <a href ="login.jsp">Cerrar sesión</a><br/>
         
         
     </center>

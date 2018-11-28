@@ -20,6 +20,10 @@
         <servlet-name>ConsultarUsuario</servlet-name>
         <servlet-class>app.controladores.ConsultarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Controlador.Login</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegistroUsuario</servlet-name>
         <url-pattern>/RegistroUsuario</url-pattern>
@@ -40,12 +44,16 @@
         <servlet-name>ConsultarUsuario</servlet-name>
         <url-pattern>/ConsultarUsuario</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    <welcome-file-list> 
-    <welcome-file>catalogo.jsp</welcome-file> 
-</welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

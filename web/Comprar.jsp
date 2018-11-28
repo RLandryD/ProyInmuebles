@@ -196,26 +196,26 @@
                                 <div class="row">
                                     <div class="form-group col-md-3">
                                         <label for="nombre">Nombre(s): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
-                                                   out.print(nombre)
-                                        ;%>
+                                                   out.print(nombre);
+                                        %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="apellido_paterno">Apellido Paterno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
-                                                   out.print(app)
-                                        ;%>
+                                                   out.print(app);
+                                        %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="apellido_materno">Apellido Materno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
-                                                   out.print(apm)
-                                        ;%>
+                                                   out.print(apm);
+                                        %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="telefono">Teléfono: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
-                                                   out.print(tel)
-                                        ;%>
+                                                   out.print(tel);
+                                        %>
                                         </label>
                                     </div>
                                 </div>
@@ -241,5 +241,12 @@
                 </div>
             </div>
         </div>
+                                        <center>
+            <a href="Agregar.jsp">Agregar Agentes</a><br/>
+            <a href ="Agentes_a.jsp">Ver agentes</a><br/>
+        <a href="catalogo.jsp">Volver al Catálogo</a><br/>
+        
+        
+    </center>
     </body>
 </html>

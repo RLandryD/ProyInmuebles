@@ -10,7 +10,7 @@
         <%
        //CONECTANOD A LA BASE DE DATOS:
        Connection con;       
-       String url="jdbc:mysql://localhost:3306/libreria";
+       String url="jdbc:mysql://localhost:3306/proyectofinal";
        String Driver="com.mysql.jdbc.Driver";
        String user="root";
        String clave="";
@@ -21,7 +21,7 @@
        int id=Integer.parseInt(request.getParameter("id"));
        ps=con.prepareStatement("delete from Agentes where Id_Agente="+id);
        ps.executeUpdate();
-       response.sendRedirect("/AppWebLibreria/Agentes_a.jsp");
+       response.sendRedirect("Agentes_a.jsp");
        
        %>
     </body>

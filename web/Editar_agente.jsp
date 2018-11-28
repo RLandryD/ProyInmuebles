@@ -74,11 +74,11 @@
                     Telefono != null && Email != null
                    ) {
                                               
-ps=con.prepareStatement("update agentes set Nombre='"+Nombre+"',Fecha_nacimiento='"+Fecha_nacimiento
+ps=con.prepareStatement("update agentes set Nombre_Completo='"+Nombre+"',Fecha_nacimiento='"+Fecha_nacimiento
                                 + "',Especialidad='"+Especialidad+"', Idiomas='"+Idiomas+"',"
                                 + " Telefono='"+Telefono+"',Email='"+Email+ "'where Id_Agente="+id);
            ps.executeUpdate();
-              response.sendRedirect("/AppWebBienesRaices/Agentes_a.jsp");
+              response.sendRedirect("Agentes_a.jsp");
            
        }
        

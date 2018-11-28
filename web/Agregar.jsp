@@ -41,8 +41,17 @@
                 
                 <input type="submit" value="Guardar" class="btn btn-primary btn-lg"/>                                                
                 <a href="Catalogo_a.jsp">Regresar</a>
+                
+                <center>
+        <a href="Agentes_a.jsp">Ver Agentes</a><br/>
+        <a href="catalogo.jsp">Catálogo</a><br/>
+        
+    </center>
             </form>
+            
         </div>
+        
+    
         
         
     </body>
@@ -75,13 +84,13 @@
                    ) {
                     
                     ps = con.prepareStatement("INSERT INTO AGENTES "
-                                              + "(Nombre, Fecha_nacimiento, Especialidad, Idiomas, "
+                                              + "(Nombre_Completo, Fecha_nacimiento, Especialidad, Idiomas, "
                                               + "Telefono, Email)"
                             + "VALUES('" + Nombre + "','" + Fecha_nacimiento + "','" + Especialidad 
                                  + "','" + Idiomas + "','" + Telefono + "','" + Email  + "')"
                     );// fin prepare
                     ps.executeUpdate();
-                    response.sendRedirect("/AppWebBienesRaices/Agentes_a.jsp");
+                    response.sendRedirect("Agentes_a.jsp");
 
                 }
             %>

@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <title>Mirelesa Book</title>
+       <title>Proyecto web</title>
  <!-----------------MENU------------------------>   
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -70,7 +70,7 @@
                             while (rs.next()) {
                         %>
                         <tr>
-                            <td>  <img src="img/agente.png" width="250" height="250" </td>
+                            <td>  <img src="img/agente.jpeg" width="250" height="250"/> </td>
                             <td class="text-center"><%= rs.getString("Nombre_completo")%></td>
                             <td class="text-center"><%= rs.getString("Fecha_nacimiento")%></td>
                             <td class="text-center"><%= rs.getString("Especialidad")%></td>
@@ -149,7 +149,7 @@
                    ) {
                     
                     ps = con.prepareStatement("INSERT INTO AGENTES "
-                                              + "(Nombre, Fecha_nacimiento, Especialidad, Idiomas, "
+                                              + "(Nombre_Completo, Fecha_nacimiento, Especialidad, Idiomas, "
                                               + "Telefono, Email)"
                             + "VALUES('" + Nombre + "','" + Fecha_nacimiento + "','" + Especialidad 
                                  + "','" + Idiomas + "','" + Telefono + "','" + Email  + "')"
@@ -159,8 +159,14 @@
 
                 }
             %>
+        <center>
+            <a href="Agregar.jsp">Agregar Agentes</a><br/>
+        <a href="catalogo.jsp">Catálogo</a><br/>
+        
+    </center>
         </div>        
         <script src="js/jquery.js" type="text/javascript"></script>             
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>    
+        
     </body>
 </html>

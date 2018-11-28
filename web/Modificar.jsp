@@ -7,6 +7,9 @@
 <%@page import="Controlador.PublicacionJpaController"%>
 <%@page import="Controlador.CasaJpaController"%>
 <%@page import="Controlador.UsuarioJpaController"%>
+<%@page import="Modelo.Usuario"%>
+<%@page import="Modelo.Publicacion"%>
+<%@page import="Modelo.Casa"%>
 <%@page import="javax.persistence.EntityManager"%>
 <%@page import="javax.persistence.Persistence"%>
 <%@page import="javax.persistence.EntityManagerFactory"%>
@@ -39,13 +42,14 @@
                             <div class="card-header text-dark text-center">
                                 <%
                             EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyInmueblesPU");
+                            EntityManager em = emf.createEntityManager();
                         
                             PublicacionJpaController pub = new PublicacionJpaController(emf);
                             CasaJpaController casa = new CasaJpaController(emf);
                             UsuarioJpaController user = new UsuarioJpaController(emf);
                             Publicacion P = null;
                             Casa C = null;
-                            Usuario S = null
+                            Usuario S = null;
                 
                             int id = 0, us = 0, cas = 0, tel = 0, hab = 0;
                             BigDecimal costo = new BigDecimal(0);
@@ -102,19 +106,6 @@
                             }catch(Exception e){
                                     System.out.println("Mensaje: " + e.getMessage());
                             }
-                                System.out.println("nombre: " + nombre);
-                                System.out.println("app: " + app);
-                                System.out.println("apm: " + apm);
-                                System.out.println("tel: " + tel);
-                                System.out.println("calle: " + calle);
-                                System.out.println("colonia: " + colonia);
-                                System.out.println("next: " + numext);
-                                System.out.println("costo: " + costo);
-                                System.out.println("estado: " + activo);
-                                System.out.println("nint: " + nint);
-                                System.out.println("hab: " + hab);
-                                System.out.println("med: " + med);
-                                System.out.println("img: " + img);
                                 %>
                                 <h3>Ver Casa <span class="fas fa-home"></span></h3>
 
@@ -127,7 +118,7 @@
                                         <div class="form-group col-md-4">
                                             <label for="costo">Costo</label>
                                             <input class="form-control" 
-                                                   type="number" 
+                                                   type="text" 
                                                    name="costo" 
                                                    id="costo"
                                                    placeholder="Costo"
@@ -198,7 +189,7 @@
                                     <br>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label for="medidas">Tipo</label>
+                                            <label for="tipo">Tipo</label>
                                             <select class="form-control" 
                                                     id="tipo" 
                                                     name="tipo">
@@ -286,10 +277,34 @@
                                             </a>
                                         </div>
                                         <%
+                                            
+                                            String tipo;
+                                            try{
+                                            tipo = request.getParameter("tipo");
+                                            System.out.println(tipo);
+                                            } catch (Exception e){
+                                                System.out.println(e.getMessage());
+                                            }
                                             P = em.find(Publicacion.class, id);
-                                            P.setEstatus(tipo);
+                                            P.setEstatus(activo);
+                                            
                                             C = em.find(Casa.class, cas);
                                             C.setCosto(costo);
+                                            C.setCalle(calle);
+                                            C.setColonia(colonia);
+                                            C.setNumExt(numext);
+                                            C.setNumInt(nint);
+                                            C.setHabitaciones(hab);
+                                            C.setMedidas(med);
+                                            //C.setTipo(tipo);
+                                            
+                                            S = em.find(Usuario.class, us);
+                                            S.setNombre(nombre);
+                                            S.setApellidoPaterno(app);
+                                            S.setApellidoMaterno(apm);
+                                            S.setTelefonoCelular(tel);
+                                            
+                                            %>
                                         <div class="form-group col-md-6">
 
                                             <button type ="submit" class="btn btn-success btn-block" >Modificar</button>

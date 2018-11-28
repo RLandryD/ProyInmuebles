@@ -129,7 +129,7 @@
                                 out.println(dir);
                                                         %></h4>
                                                 </a>
-                                                <form action="verCasa.jsp">
+                                                <form action="Comprar.jsp">
                                                     <h5>
 
                                                         <%

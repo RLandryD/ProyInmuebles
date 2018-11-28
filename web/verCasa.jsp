@@ -44,11 +44,12 @@
                         UsuarioJpaController user = new UsuarioJpaController(emf);
 
                 
-                        int id = 0, us = 0, cas = 0, tel = 0;
+                        int id = 0, us = 0, cas = 0, tel = 0, hab = 0;
                         BigDecimal costo = new BigDecimal(0);
                         String nombre = null, app = null, apm = null, t = null,
                                 calle = null, colonia = null, numext = null,
-                                nint = null, activo = null;
+                                nint = null, activo = null, img = null,
+                                med = null;
                         try{
                 
                             id = Integer.parseInt(request.getParameter("id"));
@@ -67,8 +68,11 @@
                             calle = Arrays.toString(casa.findCasa(cas).getCalle().split(","));
                             colonia = Arrays.toString(casa.findCasa(cas).getColonia().split(","));
                             numext = Arrays.toString(casa.findCasa(cas).getNumExt().split(","));
+                            med = Arrays.toString(casa.findCasa(cas).getMedidas().split(","));
                             nint = Arrays.toString(casa.findCasa(cas).getNumInt().split(","));
                             costo = casa.findCasa(cas).getCosto();
+                            hab = casa.findCasa(cas).getHabitaciones();
+                            img = cas + ".jpg";
                             
                             nombre = nombre.replace("[", "");
                             nombre = nombre.replace("]", "");
@@ -84,7 +88,8 @@
                             numext = numext.replace("]", "");
                             nint = nint.replace("[", "");
                             nint = nint.replace("]", "");
-                            
+                            med = med.replace("[", "");
+                            med = med.replace("]", "");
                             activo = activo.replace("[", "");
                             activo = activo.replace("]", "");
                             
@@ -101,6 +106,9 @@
                             System.out.println(costo);
                             System.out.println(activo);
                             System.out.println(nint);
+                            System.out.println(hab);
+                            System.out.println(med);
+                            System.out.println(img);
                             %>
                             <h3>Ver Casa <span class="fas fa-home"></span></h3>
                         </div>
@@ -162,7 +170,10 @@
                                                type="text" 
                                                name="num_int" 
                                                id="num_int"
-                                               placeholder="Número Interior">
+                                               placeholder="Número Interior"
+                                               value="<%
+                                out.print(nint);
+                                                         %>">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="habitaciones">Habitaciones</label>
@@ -170,7 +181,10 @@
                                                type="text" 
                                                name="habitaciones" 
                                                id="habitaciones"
-                                               placeholder="Habitaciones">
+                                               placeholder="Habitaciones"
+                                               value="<%
+                                                   out.print(hab);
+                                                   %>"/>
 
                                     </div>
                                 </div>
@@ -201,12 +215,17 @@
                                                type="text" 
                                                name="medidas" 
                                                id="medidas"
-                                               placeholder="Medidas">
+                                               placeholder="Medidas"
+                                               value="<%
+                                                   out.print(med);
+                                                   %>"/>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="foto">Foto</label>
                                         <img width="50%" 
-                                             src="https://image.mlive.com/home/mlive-media/width620/img/news_impact/photo/thatchjpg-36a53d8f5814f965.jpg">
+                                             src="img/<%
+                                out.println(img);
+                                                         %>"
                                     </div>
                                 </div>
                                 <br>

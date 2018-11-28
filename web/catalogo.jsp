@@ -37,7 +37,7 @@
             <div id="content-wrapper">
                 <div class="container">
                     <div class="alert alert-success" role="alert">
-                        Aquí va el mensaje.
+                        Bienvenido.
                     </div>
 
                     <!-- DataTables Example -->
@@ -138,10 +138,6 @@
                                                         <input type="hidden" name ="id" value ="<%
                                                             out.print(id);
                                                         %>"/>
-                                                        <input type ="hidden" name ="vendedor"
-                                                               value ="<%
-                                                                   out.print(usern);
-                                                               %>"/>
 
                                                     </h5>
                                                     Desde <h4><strong>$

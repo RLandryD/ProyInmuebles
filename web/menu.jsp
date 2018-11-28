@@ -10,18 +10,18 @@
     <!-- HEAD -->
     <head>
         <title>Proyecto Grupal | Menú Administrador</title>
-        <%@include file="partials/head.jsp" %>
+        <%@include file="cliente/partials/head.jsp" %>
     </head>
 
     <body id="page-top">
         <!-- Barra de navegación -->
-        <%@include file="partials/navbar.jsp" %>
+        <%@include file="administrador/partials/navbar.jsp" %>
 
         <!-- Contenido -->
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <%@include file="partials/sidebar.jsp" %>
+            <%@include file="administrador/partials/sidebar.jsp" %>
 
             <!-- Contenido -->
             <div id="content-wrapper">
@@ -112,7 +112,7 @@
                 <!-- /.container-fluid -->
 
                 <!-- Sticky Footer -->
-                <%@include file="partials/footer.jsp" %>
+                <%@include file="administrador/partials/footer.jsp" %>
             </div>
             <!-- /.content-wrapper -->
         </div>

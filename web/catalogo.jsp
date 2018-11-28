@@ -164,6 +164,12 @@
                     <%@include file="invitado/partials/footer.jsp" %>
                 </div>
                 <!-- /.content-wrapper -->
+                <center>
+            <a href="Agregar.jsp">Agregar Agentes</a><br/>
+            <a href ="Agentes_a.jsp">Ver agentes</a><br/>
+        
+        
+    </center>
             </div>
             <!-- /#wrapper -->
 

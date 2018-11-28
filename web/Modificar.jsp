@@ -28,7 +28,7 @@
     </head>
 
     <body id="page-top">
-        <form action="vender" method="post">
+        <form action="" method="post">
             <!-- Barra de navegación -->
             <%@include file="invitado/partials/navbar.jsp" %>
 
@@ -257,7 +257,7 @@
                                         <div class="form-group col-md-3">
                                             <label for="telefono">Teléfono</label>
                                             <input class="form-control" 
-                                                   type="int" 
+                                                   type="text" 
                                                    name="telefono" 
                                                    id="telefono"
                                                    placeholder="Teléfono"
@@ -276,40 +276,62 @@
                                                 <button class="btn btn-info btn-block">Regresar</button>
                                             </a>
                                         </div>
-                                        <%
-                                            
-                                            String tipo;
-                                            try{
-                                            tipo = request.getParameter("tipo");
-                                            System.out.println(tipo);
-                                            } catch (Exception e){
-                                                System.out.println(e.getMessage());
-                                            }
-                                            P = em.find(Publicacion.class, id);
-                                            P.setEstatus(activo);
-                                            
-                                            C = em.find(Casa.class, cas);
-                                            C.setCosto(costo);
-                                            C.setCalle(calle);
-                                            C.setColonia(colonia);
-                                            C.setNumExt(numext);
-                                            C.setNumInt(nint);
-                                            C.setHabitaciones(hab);
-                                            C.setMedidas(med);
-                                            //C.setTipo(tipo);
-                                            
-                                            S = em.find(Usuario.class, us);
-                                            S.setNombre(nombre);
-                                            S.setApellidoPaterno(app);
-                                            S.setApellidoMaterno(apm);
-                                            S.setTelefonoCelular(tel);
-                                            
-                                            %>
+
                                         <div class="form-group col-md-6">
 
                                             <button type ="submit" class="btn btn-success btn-block" >Modificar</button>
-
+                                            <%
+                                            
+                                                                                        String tipo;
+                                                                                        String nc, ncalle, ncolonia,
+                                                                                                next, nnint, nhab, nmed,
+                                                                                                nnombre, napp, napm, ntel;
+                                                                                        BigDecimal ncosto;
+                                                                                        try{
+                                                                                        tipo = request.getParameter("tipo");
+                                                                                        nc = request.getParameter("costo");
+                                                                                        ncosto = new BigDecimal(nc);
+                                                                                        ncalle = request.getParameter("calle");
+                                                                                        ncolonia = request.getParameter("colonia");
+                                                                                        next = request.getParameter("num_ext");
+                                                                                        nnint = request.getParameter("num_int");
+                                                                                        nhab = request.getParameter("habitaciones");
+                                                                                        nmed = request.getParameter("medidas");
+                                                                                        nnombre = request.getParameter("nombre");
+                                                                                        napp = request.getParameter("apellido_paterno");
+                                                                                        napm = request.getParameter("apellido_materno");
+                                                                                        ntel = request.getParameter("telefono");
+                                                                                        System.out.println(tipo);
+                                                                                        } catch (Exception e){
+                                                                                            System.out.println(e.getMessage());
+                                                                                        }
+                                                                                        P = em.find(Publicacion.class, id);
+                                                                                        P.setEstatus(tipo);
+                                            
+                                                                                        C = em.find(Casa.class, cas);
+                                                                                        C.setCosto(ncosto);
+                                                                                        C.setCalle(ncalle);
+                                                                                        C.setColonia(ncolonia);
+                                                                                        C.setNumExt(next);
+                                                                                        C.setNumInt(nnint);
+                                                                                        C.setHabitaciones(nhab);
+                                                                                        C.setMedidas(nmed);
+                                                                                        
+                                                                                        S = em.find(Usuario.class, us);
+                                                                                        S.setNombre(nnombre);
+                                                                                        S.setApellidoPaterno(napp);
+                                                                                        S.setApellidoMaterno(napm);
+                                                                                        S.setTelefonoCelular(ntel);
+                                            
+                                            %>
                                         </div>
+                                        <center>
+            <a href="Agregar.jsp">Agregar Agentes</a><br/>
+            <a href ="Agentes_a.jsp">Ver agentes</a><br/>
+        <a href="catalogo.jsp">Volver al Catálogo</a><br/>
+        
+        
+    </center>
                                     </div>
                                 </div>
                             </div>

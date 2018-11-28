@@ -43,7 +43,9 @@
                             PublicacionJpaController pub = new PublicacionJpaController(emf);
                             CasaJpaController casa = new CasaJpaController(emf);
                             UsuarioJpaController user = new UsuarioJpaController(emf);
-
+                            Publicacion P = null;
+                            Casa C = null;
+                            Usuario S = null
                 
                             int id = 0, us = 0, cas = 0, tel = 0, hab = 0;
                             BigDecimal costo = new BigDecimal(0);
@@ -283,9 +285,14 @@
                                                 <button class="btn btn-info btn-block">Regresar</button>
                                             </a>
                                         </div>
+                                        <%
+                                            P = em.find(Publicacion.class, id);
+                                            P.setEstatus(tipo);
+                                            C = em.find(Casa.class, cas);
+                                            C.setCosto(costo);
                                         <div class="form-group col-md-6">
 
-                                            <button type ="submit" class="btn btn-success btn-block">Comprar</button>
+                                            <button type ="submit" class="btn btn-success btn-block" >Modificar</button>
 
                                         </div>
                                     </div>

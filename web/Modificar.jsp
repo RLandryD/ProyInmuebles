@@ -116,7 +116,7 @@
                                     <h4>Información de la Vivienda</h4><hr>
                                     <div class="row">
                                         <div class="form-group col-md-4">
-                                            <label for="costo">Costo</label>
+                                            <label>Costo</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="costo" 
@@ -127,7 +127,7 @@
                                                    %>"/>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="calle">Calle</label>
+                                            <label>Calle</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="calle" 
@@ -138,7 +138,7 @@
                                                    %>"/>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="colonia">Colonia</label>
+                                            <label>Colonia</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="colonia" 
@@ -152,7 +152,7 @@
                                     <br>
                                     <div class="row">
                                         <div class="form-group col-md-4">
-                                            <label for="num_ext">Número Exterior</label>
+                                            <label>Número Exterior</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="num_ext" 
@@ -163,7 +163,7 @@
                                                    %>"/>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="num_int">Número Interior</label>
+                                            <label>Número Interior</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="num_int" 
@@ -174,7 +174,7 @@
                                                    %>">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="habitaciones">Habitaciones</label>
+                                            <label>Habitaciones</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="habitaciones" 
@@ -189,7 +189,7 @@
                                     <br>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label for="tipo">Tipo</label>
+                                            <label>Tipo</label>
                                             <select class="form-control" 
                                                     id="tipo" 
                                                     name="tipo">
@@ -200,7 +200,7 @@
 
                                         <br>
                                         <div class="form-group col-md-6">
-                                            <label for="medidas">Medidas</label>
+                                            <label>Medidas</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="medidas" 
@@ -211,7 +211,7 @@
                                                    %>"/>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="foto">Foto</label>
+                                            <label>Foto</label>
                                             <img width="50%" 
                                                  src="img/<%
                                     out.println(img);
@@ -222,7 +222,7 @@
                                     <h4>Información del Vendedor</h4><hr>
                                     <div class="row">
                                         <div class="form-group col-md-3">
-                                            <label for="nombre">Nombre(s)</label>
+                                            <label>Nombre(s)</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="nombre" 
@@ -233,7 +233,7 @@
                                             ;%>"/>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="apellido_paterno">Apellido Paterno</label>
+                                            <label>Apellido Paterno</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="apellido_paterno" 
@@ -244,7 +244,7 @@
                                             ;%>"/>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="apellido_materno">Apellido Materno</label>
+                                            <label>Apellido Materno</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="apellido_materno" 
@@ -255,7 +255,7 @@
                                             ;%>" />
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="telefono">Teléfono</label>
+                                            <label>Teléfono</label>
                                             <input class="form-control" 
                                                    type="text" 
                                                    name="telefono" 
@@ -282,7 +282,7 @@
                                             <button type ="submit" class="btn btn-success btn-block" >Modificar</button>
                                             <%
                                             
-                                                String tipo;
+                                               /* String tipo;
                                                 String nc, ncalle, ncolonia,
                                                     next, nnint, nhab, nmed,
                                                     nnombre, napp, napm, ntel;
@@ -305,9 +305,7 @@
                                                     espero que tú puedas hacer lo de mandar un String a la bd
                                                     como le hicimos en el tuyo.*/
                                                                                         
-                                                } catch (Exception e){
-                                                    System.out.println(e.getMessage());
-                                                }
+                                               /* 
                                                 P = em.find(Publicacion.class, id);
                                                 P.setEstatus(tipo);
                                             
@@ -325,7 +323,10 @@
                                                 S.setApellidoPaterno(napp);
                                                 S.setApellidoMaterno(napm);
                                                 S.setTelefonoCelular(ntel);
-                                            
+                                                } catch (Exception e){
+                                                    System.out.println(e.getMessage());
+                                                }
+                                            */
                                             %>
                                         </div>
                                         <center>

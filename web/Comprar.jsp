@@ -138,13 +138,13 @@
                                         </label>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="calle">Calle: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Calle: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(calle);
                                                %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="colonia">Colonia:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%
+                                        <label>Colonia:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%
                                                    out.print(colonia);
                                                %>
                                         </label>
@@ -153,19 +153,19 @@
                                 <br>
                                 <div class="row">
                                     <div class="form-group col-md-4">
-                                        <label for="num_ext">Número Exterior:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%
+                                        <label>Número Exterior:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%
                                                    out.print(numext);
                                                %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="num_int">Número Interior: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Número Interior: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                 out.print(nint);
                                                %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="habitaciones">Habitaciones: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Habitaciones: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(hab);
                                                %>
                                         </label>
@@ -175,7 +175,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="form-group col-md-4">
-                                        <label for="medidas">Tipo: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Tipo: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(tipo);
                                                %>
                                         </label>
@@ -183,7 +183,7 @@
                                 <br>
                                 
                                     <div class="form-group col-md-4">
-                                        <label for="medidas">Medidas: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Medidas: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(med);
                                                %>
                                         </label>
@@ -199,25 +199,25 @@
                                 <h4>Información del Vendedor</h4><hr>
                                 <div class="row">
                                     <div class="form-group col-md-3">
-                                        <label for="nombre">Nombre(s): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Nombre(s): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(nombre);
                                         %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="apellido_paterno">Apellido Paterno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Apellido Paterno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(app);
                                         %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="apellido_materno">Apellido Materno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Apellido Materno: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(apm);
                                         %>
                                         </label>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="telefono">Teléfono: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
+                                        <label>Teléfono: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%
                                                    out.print(tel);
                                         %>
                                         </label>

@@ -20,7 +20,7 @@
 <html lang="es">
     <!-- HEAD -->
     <head>
-        <title>Proyecto Individual | Libro Nuevo</title>
+        <title></title>
         <%@include file="invitado/partials/head.jsp" %>
     </head>
 
@@ -43,8 +43,9 @@
                         CasaJpaController casa = new CasaJpaController(emf);
                         UsuarioJpaController user = new UsuarioJpaController(emf);
 
-                
-                        int id = 0, us = 0, cas = 0, tel = 0, hab = 0;
+                        String id, us, cas, tel, hab
+                                int cass = 0;
+                      //  int id = 0, us = 0, cas = 0, tel = 0, hab = 0;
                         BigDecimal costo = new BigDecimal(0);
                         String nombre = null, app = null, apm = null, t = null,
                                 calle = null, colonia = null, numext = null,
@@ -52,8 +53,11 @@
                                 med = null, tipo = null;
                         try{
                 
-                            id = Integer.parseInt(request.getParameter("id"));
+                //            id = Integer.parseInt(request.getParameter("id"));                
+                              id = request.getParameter("id");
                             us = pub.findPublicacion(id).getIdUsuario();
+                            
+                            
                             cas = pub.findPublicacion(id).getIdCasa();
                             img = cas + ".jpg";
                             

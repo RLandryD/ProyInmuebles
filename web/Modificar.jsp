@@ -331,7 +331,7 @@
                                         <center>
             <a href="Agregar.jsp">Agregar Agentes</a><br/>
             <a href ="Agentes_a.jsp">Ver agentes</a><br/>
-        <a href="catalogo.jsp">Volver al Catálogo</a><br/>
+        <a href="catalogo_a.jsp">Volver al Catálogo</a><br/>
         
         
     </center>
